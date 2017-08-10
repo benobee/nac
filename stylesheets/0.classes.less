@@ -1,0 +1,65 @@
+.sqs-edit-mode-active {
+    .design-layout-card {
+        * {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+        }
+    }
+}
+
+
+/**** GLOBAL CLASSES ****/
+
+.design-layout-card {
+    .intrinsic {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.4s 0.1s, transform 0.4s 0.1s;
+    }
+    .image-title-wrapper {
+        opacity: 0;
+        transition: opacity 0.4s 0.2s, transform 0.4s 0.2s;
+    }
+    .image-subtitle-wrapper {
+        opacity: 0;
+        transition: opacity 0.4s 0.3s, transform 0.4s 0.3s;
+    }
+    .image-button-wrapper {
+        opacity: 0;
+        transition: opacity 0.4s 0.4s, transform 0.4s 0.4s;
+    }
+    &.image-position-left {
+        .image-button-inner {
+            a {
+                background-color: hsl(26, 91%, 64%) !important;
+            }
+        }
+        .image-title-wrapper,
+        .image-subtitle-wrapper,
+        .image-button-wrapper {
+            transform: translateX(20px);
+        }
+    }
+    &.image-position-right {
+        .image-button-inner {
+            a {
+                background-color: hsl(206, 74%, 53%) !important;
+            }
+        }
+        .image-title-wrapper,
+        .image-subtitle-wrapper,
+        .image-button-wrapper {
+            transform: translateX(-20px);
+        }
+    }
+    &[data-scrollmap-triggered-in=true] {
+        .image-title-wrapper,
+        .image-subtitle-wrapper,
+        .intrinsic,
+        .image-button-wrapper {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+    }
+}
